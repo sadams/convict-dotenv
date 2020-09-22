@@ -1,0 +1,42 @@
+{
+  "name": "convict-dotenv",
+  "version": "1.0.0",
+  "description": "Use convict with dotenv to build config",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run test",
+      "pre-commit": "npm run test"
+    }
+  },
+  "keywords": [
+    "configuration",
+    "config",
+    "settings",
+    "schema",
+    "validation",
+    "dotenv",
+    "environment"
+  ],
+  "scripts": {
+    "test": "npm run lint && tap --lines=100 --branches=100 --functions=100",
+    "lint": "eslint ./"
+  },
+  "author": "Sam Adams <adams.sam@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "prettier": "^2.1.2",
+    "tap": "^14.10.8"
+  },
+  "dependencies": {
+    "convict": "^6.0.0",
+    "dotenv": "^8.2.0"
+  }
+}
