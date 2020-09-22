@@ -1,5 +1,9 @@
 # convict dotenv
 
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+[![Coverage Status](https://coveralls.io/repos/github/sadams/convict-dotenv/badge.svg)](https://coveralls.io/github/sadams/convict-dotenv)
+
+
 Small Node.js library for settings/configuration. It uses [dotenv](https://www.npmjs.com/package/dotenv) with [convict](https://www.npmjs.com/package/convict) to provide a simple interface for getting config from the environment, including `.env` files.
 
 ## usage
