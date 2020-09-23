@@ -27,6 +27,14 @@
     "test:code": "tap --lines=100 --branches=100 --functions=100",
     "lint": "eslint ./"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sadams/convict-dotenv.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sadams/convict-dotenv/issues"
+  },
+  "homepage": "https://github.com/sadams/convict-dotenv#readme",
   "author": "Sam Adams <adams.sam@gmail.com>",
   "license": "ISC",
   "devDependencies": {
