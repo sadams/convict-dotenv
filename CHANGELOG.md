@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/sadams/convict-dotenv/compare/v1.0.0...v1.1.0) (2020-09-23)
+
+
+### Features
+
+* **npm:** add links to repo for npm ([feea75d](https://github.com/sadams/convict-dotenv/commit/feea75d2cd92d76f265a15af9963fbe88d016bde))
+
 # 1.0.0 (2020-09-23)
 
 
