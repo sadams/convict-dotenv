@@ -22,7 +22,8 @@
     "environment"
   ],
   "scripts": {
-    "test": "npm run lint && tap --lines=100 --branches=100 --functions=100",
+    "test": "npm run lint && npm audit && npm run test:code",
+    "test:code": "tap --lines=100 --branches=100 --functions=100",
     "lint": "eslint ./"
   },
   "author": "Sam Adams <adams.sam@gmail.com>",
