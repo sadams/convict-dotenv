@@ -4,7 +4,7 @@ const path = require('path');
 const dotenv = require('dotenv');
 const convict = require('convict');
 
-function getConfig(convictSchema) {
+function getConfig(convictSchema, enabledProp = null, disabledDefaults = {}) {
   let envVars;
 
   function defaultDotenvPath() {
@@ -41,9 +41,27 @@ function getConfig(convictSchema) {
     env: { ...loadEnvVars(), ...process.env },
   };
 
-  const config = convict(convictSchema, convictOptions);
-  config.validate({ allowed: 'strict' });
-  return config.getProperties();
+  function _getConfig(schema) {
+    const config = convict(schema, convictOptions);
+    config.validate({ allowed: 'strict' });
+    return config.getProperties();
+  }
+
+  if (enabledProp) {
+    const enabledSchema = convictSchema[enabledProp];
+    if (!enabledSchema) {
+      throw new Error(
+        `Convict schema doesn't include property "${enabledProp}". Remove enabledProp argument or include it in the schema.`,
+      );
+    }
+    const justEnabledSchema = { [enabledProp]: enabledSchema };
+    const enabledConfig = _getConfig(justEnabledSchema);
+    const enabled = enabledConfig[enabledProp];
+    if (!enabled) {
+      return { ...enabledConfig, ...disabledDefaults };
+    }
+  }
+  return _getConfig(convictSchema);
 }
 
 module.exports = {
