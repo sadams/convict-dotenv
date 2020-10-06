@@ -24,6 +24,34 @@ const schema = {
 console.log(getConfig(schema).foo);
 ```
 
+If you want to only parse your config if a specific enabled flag is set in your config, specify the prop, and it will be evaluated before parsing the rest of the config. If it's falsey, only the flag and any other defaults you pass will be returned:
+
+```javascript
+const {getConfig} = require('convict-dotenv');
+const schema = {
+	enabled: {
+		env: 'FOO_ENABLED',
+		format: String,
+		default: false,
+	},
+	somethingRequired: {
+		env: 'FOO_REQUIRED',
+		format: String,
+		default: null, // <== convicts way of making something required...
+	},
+};
+console.log(getConfig(schema, 'enabled', {theseAre: 'disabledDefaults'}));
+/* 
+No error thrown and results in:
+
+{
+  enabled: false, 
+  theseAre: 'disabledDefaults'
+}
+*/
+
+```
+
 ## Opinionated:
 
 1. If your `NODE_ENV` is set to `test`, the default `.env` location `${process.cwd()}/.env`) will not be loaded (you have to explicitly set `DOTENV_CONFIG_PATH` if you want to load env vars from a file in tests: `DOTENV_CONFIG_PATH=/somewhere/test.env node index.js`). 
