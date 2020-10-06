@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/sadams/convict-dotenv/compare/v1.1.0...v1.2.0) (2020-10-06)
+
+
+### Features
+
+* support enabled prop in schema ([a1e7822](https://github.com/sadams/convict-dotenv/commit/a1e7822314e8cd721bf9b3692dbfc02582809375))
+
 # [1.1.0](https://github.com/sadams/convict-dotenv/compare/v1.0.0...v1.1.0) (2020-09-23)
 
 
