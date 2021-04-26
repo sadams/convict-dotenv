@@ -48,7 +48,7 @@
     "husky": "^4.3.0",
     "prettier": "^2.1.2",
     "semantic-release": "^17.1.2",
-    "tap": "^14.10.8"
+    "tap": "^15.0.0"
   },
   "dependencies": {
     "convict": "^6.0.0",
